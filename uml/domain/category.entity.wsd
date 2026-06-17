@@ -1,0 +1,13 @@
+@startuml
+
+entity Category
+
+Category : uuid id
+Category : string name
+Category : string description
+Category : boolean is_activate
+Category : date created_at
+
+
+
+@enduml
