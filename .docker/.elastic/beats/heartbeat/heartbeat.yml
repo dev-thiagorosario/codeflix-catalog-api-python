@@ -1,0 +1,17 @@
+heartbeat.monitors:
+  - type: http
+    id: codeflix-api-health
+    name: Codeflix API healthcheck
+    urls:
+      - "http://app:8000/health"
+      - "http://nginx/nginx-health"
+    schedule: "@every 10s"
+
+output.elasticsearch:
+  hosts:
+    - "http://elasticsearch:9200"
+
+setup.kibana:
+  host: "http://kibana:5601"
+
+logging.to_files: false

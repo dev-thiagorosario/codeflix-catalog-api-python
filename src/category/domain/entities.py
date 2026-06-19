@@ -4,7 +4,7 @@ from typing import Optional
 import uuid
 
 
-@dataclass(kw_only=True, frozen=True)
+@dataclass(frozen=True)
 class Category:
     name: str
     description: Optional[str] = None

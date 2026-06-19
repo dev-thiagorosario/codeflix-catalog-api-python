@@ -1,9 +1,7 @@
 services:
   app:
     volumes:
-      - .:/app
+      - ..:/app:cached
     environment:
       DJANGO_DEBUG: "true"
       DJANGO_RUNSERVER: "true"
-    ports:
-      - "${APP_PORT:-8000}:8000"

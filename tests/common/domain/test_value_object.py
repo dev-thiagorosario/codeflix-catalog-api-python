@@ -1,3 +1,4 @@
+import dataclasses
 import unittest
 import uuid
 
