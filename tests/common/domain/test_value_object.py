@@ -26,3 +26,13 @@ class TestUniqueEntityId(unittest.TestCase):
     def test_constructor_with_invalid_id_type(self):
         with self.assertRaises(InvalidUuidException):
             UniqueEntityId(None)
+
+    def test_is_imutable(self):
+        unique_entity_id = UniqueEntityId()
+
+        with self.assertRaises(dataclasses.FrozenInstanceError):
+            unique_entity_id.id = str(uuid.uuid4())
+    
+    def test_convert_to_str(self):
+        unique_entity_id = UniqueEntityId()
+        self.assertEqual(str(unique_entity_id), unique_entity_id.id)
