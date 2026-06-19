@@ -1,0 +1,2 @@
+# Prometheus runtime data is stored in the named volume `prometheus-data`.
+# The active configuration file is `.docker/.prometheus/prometheus.yaml`.

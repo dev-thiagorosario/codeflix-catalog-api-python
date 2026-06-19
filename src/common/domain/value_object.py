@@ -11,8 +11,8 @@ class UniqueEntityId:
     )
 
     def __post_init__(self):
-        id.value = str(self.id) if isinstance(self.id, uuid.UUID) else self.id
-        object.__setattr__(self, 'id', id.value)
+        value = str(self.id) if isinstance(self.id, uuid.UUID) else self.id
+        object.__setattr__(self, 'id', value)
         self.__validate(self.id)
 
     def __validate(self, value: str) -> None:
@@ -24,4 +24,4 @@ class UniqueEntityId:
         return f"{self.id}"
     
     def __repr__(self) -> str:
-        return f"UniqueEntityId(id='{self.id}')" 
+        return f"UniqueEntityId(id='{self.id}')"

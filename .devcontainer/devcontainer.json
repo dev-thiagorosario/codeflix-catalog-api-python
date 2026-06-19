@@ -1,0 +1,48 @@
+{
+  "name": "Codeflix Catalog API Python",
+  "dockerComposeFile": [
+    "../docker-compose.yaml",
+    "docker-compose.yml"
+  ],
+  "service": "app",
+  "workspaceFolder": "/app",
+  "remoteUser": "app",
+  "forwardPorts": [
+    8000,
+    8080,
+    9090
+  ],
+  "portsAttributes": {
+    "8000": {
+      "label": "FastAPI"
+    },
+    "8080": {
+      "label": "Nginx"
+    },
+    "9090": {
+      "label": "Prometheus"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-azuretools.vscode-docker"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.analysis.extraPaths": [
+          "/app/src"
+        ],
+        "python.testing.unittestArgs": [
+          "discover",
+          "-s",
+          "tests",
+          "-p",
+          "test*.py"
+        ]
+      }
+    }
+  }
+}
